@@ -5,11 +5,17 @@ const concat         = require('gulp-concat')
 const autoprefixer   = require('gulp-autoprefixer')
 const uglify         = require('gulp-uglify')
 const imagemin       = require('gulp-imagemin')
-const rename       = require('gulp-rename')
+const rename         = require('gulp-rename')
 const nunjucksRender = require('gulp-nunjucks-render')
 const del            = require('del')
 const browserSync    = require('browser-sync').create()
+const ghPages        = require('gulp-gh-pages')
 
+
+function deploy() {
+  return src('dist/**/*')
+    .pipe(ghPages())
+}
 
 function browsersync() {
   browserSync.init({
@@ -101,6 +107,7 @@ exports.watching = watching
 exports.images = images
 exports.nunjucks = nunjucks
 exports.cleanDist = cleanDist
+exports.deploy = deploy
 exports.build = series(cleanDist, images, build)
 
 exports.default = parallel(nunjucks, styles, scripts, browsersync, watching)
