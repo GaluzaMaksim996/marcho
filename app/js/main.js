@@ -1,5 +1,4 @@
 $(function () {
-
   $('.shop__filter-btn').on('click', function () {
     $('.shop__filters').slideToggle()
   })
