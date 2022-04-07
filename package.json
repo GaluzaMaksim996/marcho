@@ -30,5 +30,9 @@
   },
   "author": "Maksim Galuza",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "resolutions": {
+    "gift": "^0.10.2"
+  },
+  "repository": "https://github.com/GaluzaMaksim996/verstka-marcho-shop.git"
 }
