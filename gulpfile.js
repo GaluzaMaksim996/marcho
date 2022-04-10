@@ -79,7 +79,7 @@ function images() {
     ]))
     .pipe(dest('dist/images'))
 }
-// 'app/css/style.min.css',
+
 function build() {
   return src([
     'app/**/*.html',
